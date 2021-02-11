@@ -1,0 +1,26 @@
+{
+  "name": "projecttech",
+  "version": "1.0.0",
+  "description": "Dit is mijn project tech!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "Nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adriaan350/blok-tech.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Adriaan350/blok-tech/issues"
+  },
+  "homepage": "https://github.com/Adriaan350/blok-tech#readme",
+  "dependencies": {
+    "camelcase": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
