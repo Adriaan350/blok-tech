@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    {{!-- {{if (messages.error) { }}
+    {{messages.error}}
+    {{ } }} --}}
+    <form method="POST" action="/delete">
+        <h1>VERWIJDEREN</h1>
+        <h3>Als je hier je gebruikersnaam invult en drukt op verwijderen dan wordt je account verwijderd.</h3>
+        <label for="username">Gebruikersnaam</label><br><br>
+        <input type="text" name="username"><br><br>
+        {{!-- <label for="password">Wachtwoord?</label><br><br>
+        <input type="password" name="password"><br> --}}
+        <span>Toch inloggen? <a href="/login">login!</a></span><br>
+        <button type="submit">Verwijderen</button><br>
+    </form>
+</body>
+
+</html>

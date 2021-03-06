@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
 
 <body>
+    {{!-- {{if (messages.error) { }}
+    {{messages.error}}
+    {{ } }} --}}
     <form method="POST" action="/login">
         <h1>Register</h1>
-        <label>Wat wil je als gebruikersnaam?</label><br><br>
+        <label for="username">Wat wil je als gebruikersnaam?</label><br><br>
         <input type="text" name="username"><br>
-        <label>Wat wil je als wachtwoord?</label><br><br>
+        <label for="password">Wat wil je als wachtwoord?</label><br><br>
         <input type="password" name="password"><br>
+        <span>Wachtwoord <a href="/wwvergeten">vergeten?</a></span><br>
         <span>Nog geen account? <a href="/register">Registreer!</a></span>
         <button type="submit">Let's go</button><br>
     </form>

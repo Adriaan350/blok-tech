@@ -21,7 +21,7 @@ const UserForm = new mongoose.Schema({
         require: true,
     },
     age: {
-        type: String,
+        type: Number,
         require: true,
     }
 });
