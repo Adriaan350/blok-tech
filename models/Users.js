@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var passportLocalMongoose=require("passport-local-mongoose");
 require('../connect.js')
 
 const UserForm = new mongoose.Schema({
@@ -25,6 +26,8 @@ const UserForm = new mongoose.Schema({
         require: true,
     }
 });
+
+UserForm.plugin(passportLocalMongoose);
 
 const Users = mongoose.model('Users', UserForm);
 

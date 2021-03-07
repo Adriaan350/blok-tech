@@ -11,7 +11,7 @@ module.exports = (passport) => {
         .then(user => {
             if (!user)
                 return done(null, false, {
-                    message: 'invalid username'
+                    message: 'Gebruikersnaam is verkeerd!'
                 });
                 Bcrypt.compare(password, user.password, (err, isMatch) => {
                     if (err) throw err;
@@ -20,7 +20,7 @@ module.exports = (passport) => {
                         return done(null, user);
                     } else {
                         return done(null, false, {
-                            message: 'Wachtwoord fout'
+                            message: 'Het wachtwoord klopt niet!'
                         })
                     }
             });
@@ -28,8 +28,6 @@ module.exports = (passport) => {
     })
     );
 }
-
-
 
 passport.serializeUser((user, done) =>
 {

@@ -8,12 +8,9 @@ const DBConnection = require('./connect.js');
 DBConnection(mongoose);
 const Bcrypt = require('bcrypt');
 const passport = require('passport');
-if(process.env.NODE_ENV !== 'production'){
+if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
-const { doesNotReject } = require('assert');
-const { POINT_CONVERSION_COMPRESSED } = require('constants');
-// const magIk = require('./magik');
 const initializePassport = require('./passport-config')
 initializePassport(
   passport,
@@ -28,7 +25,7 @@ const port = 3000
 
 const magIk = (request, response, next) => {
   if (request.isAuthenticated()) {
-      return next();
+    return next();
   }
   request.flash('error'); response.redirect('login');
 }
@@ -62,8 +59,8 @@ app.get('/register', (request, response) => {
   response.render('register')
 });
 
-app.get('/wwvergeten', (request, response) => {
-  response.render('wwvergeten')
+app.get('/instellingen', magIk, (request, response) => {
+  response.render('instellingen')
 });
 
 app.get('/home', magIk, (request, response) => {
@@ -74,15 +71,15 @@ app.get('/delete', (request, response) => {
   response.render('delete')
 });
 
-app.get('/', (request, response) => {
+app.get('/', magIk, (request, response) => {
   response.render('index')
 });
 
 app.get('/logout', (request, response) => {
   request.logout();
-  request.flash('je bent uitgelogd');
+  request.flash('uitgelogd');
   response.redirect('login');
-})
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
@@ -113,17 +110,8 @@ app.post("/registered", async (request, response) => {
   }
 });
 
-app.get("/dump", async (request, response) => {
-  try {
-    const result = await User.find().exec();
-    response.send(result);
-  } catch (error) {
-    response.status(500).send(error);
-  }
-});
-
 app.post('/login', passport.authenticate('local', {
-  successRedirect: '/home',
+  successRedirect: '/',
   failureRedirect: '/login',
   failureFlash: true
 }));
@@ -137,6 +125,20 @@ app.post("/delete", async (request, response) => {
     response.redirect('register')
   } catch (error) {
     response.status(500).send(error);
+  }
+});
+
+
+app.post('/change', magIk, async (request, respond) => {
+  try {
+    request.body.password = Bcrypt.hashSync(request.body.password, 10);
+    const filter = { username: request.user.username };
+    const user = await User.findOne({ username: request.user.username });
+    await User.updateOne(filter, { password: request.body.password });
+    await user.save()
+      .then(() => { respond.redirect('/'); });
+  } catch {
+    respond.status(500).send();
   }
 });
 
@@ -154,3 +156,42 @@ app.post("/delete", async (request, response) => {
   //       response.status(500).send(error);
   //   }
   // });
+
+  // app.post("/change", async (request, response) => {
+  //   try {
+  //    const user = await User.findOne({ 
+  //      username: request.user.username 
+  //     }); 
+  //     await user.setPassword(request.body.password); 
+  //     const updatedUser = await user.save(); 
+  //     request.login(updatedUser); 
+  //     request.flash('success', 'Password Changed Successfully') 
+  //     response.redirect('/') 
+  //     } catch (error) {
+  //       response.status(500).send(error);
+  //     }
+  //   });
+
+  // app.post("/change", async (request, response) => {
+//   try {
+//    const user = await User.findOne({ 
+//      username: request.user.username 
+//     });
+//     user.overwrite(request.body.password); 
+//     const updatedUser = await user.save(); 
+//     request.login(updatedUser); 
+//     request.flash('success', 'Password Changed Successfully') 
+//     response.redirect('./') 
+//     } catch (error) {
+//       response.status(500).send(error);
+//     }
+//   });
+
+// app.get("/dump", async (request, response) => {
+//   try {
+//     const result = await User.find().exec();
+//     response.send(result);
+//   } catch (error) {
+//     response.status(500).send(error);
+//   }
+// });

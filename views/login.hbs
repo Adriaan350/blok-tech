@@ -8,18 +8,18 @@
 </head>
 
 <body>
-    {{!-- {{if (messages.error) { }}
-    {{messages.error}}
-    {{ } }} --}}
     <form method="POST" action="/login">
         <h1>Register</h1>
         <label for="username">Wat wil je als gebruikersnaam?</label><br><br>
         <input type="text" name="username"><br>
         <label for="password">Wat wil je als wachtwoord?</label><br><br>
         <input type="password" name="password"><br>
-        <span>Wachtwoord <a href="/wwvergeten">vergeten?</a></span><br>
         <span>Nog geen account? <a href="/register">Registreer!</a></span>
-        <button type="submit">Let's go</button><br>
+
+        <button type="submit">Let's go</button><br><br>
+        {{#if messages.error}}
+        <span id="error">{{messages.error}}</span>
+        {{/if}}
     </form>
 </body>
 
