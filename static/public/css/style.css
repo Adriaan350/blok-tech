@@ -10,12 +10,11 @@ body{
     background-color: #1f1e1d;
     color: white;
 }
-
 .login{
     margin-top:2em;
     margin-bottom:2em;
 }
-.login > main > form{
+.login > main > section > form{
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -23,25 +22,25 @@ body{
     margin-left: 1em;
     margin-right: 1em;
 }
-.login > main > form > label:before {
+.login > main > section > form > label:before {
     content: "\A";
     white-space: pre;
 }
-.login > main > form > label{
+.login > main > section > form > label{
     width: 100%;
     font-size:25px;
     color:white;
     align-items: left;
     margin-bottom: 1em;
 }
-.login > main > form > input {
+.login > main > section > form > input {
     width: 100%;
     padding: 10px;
     border-radius: 20px;
     border: 1px solid grey;
     margin-bottom: 1em;
 }
-.login > main > form > button {
+.login > main > section > form > button {
     width: 100%;
     padding: 10px;
     background-color: white;
@@ -50,9 +49,33 @@ body{
     border-radius: 20px;
     margin-top: 2em;
 }
-.login > main > h1{
+.login > main > section > h1{
     font-size:30px;
     text-align: center;
+}
+.index > main > section > h1{
+    font-size:30px;
+    text-align: center;
+    margin-top: 1em;
+}
+.index > main > section > p{
+    margin-left: 2em;
+    margin-right: 2em;
+    font-size:20px;
+    text-align: center;
+    margin-top: 1em;
+}
+.voetbal > main > section > h1{
+    font-size:30px;
+    text-align: center;
+    margin-top: 1em;
+}
+.voetbal > main > section > p{
+    margin-left: 2em;
+    margin-right: 2em;
+    font-size:20px;
+    text-align: center;
+    margin-top: 1em;
 }
 .login > main > p{
     text-align: center;
@@ -63,7 +86,8 @@ body{
     margin:1em auto;
 }
 ul {
-    position: absolute;
+    z-index: 10;
+    position: fixed;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -104,3 +128,41 @@ ul {
   .linkje{
       color: #3413f1;
   }
+  section > a{
+      position: relative;
+  }
+  section > a:first-of-type > img{
+      margin-top: 1.5em;
+}
+section > a:last-of-type > img{
+    margin-bottom: 3.3em;
+}
+  section > a > img{
+      width: 100vw;
+      overflow: hidden;
+  }
+  .voetbal > main > section > img{
+      margin-top: 2em;
+  }
+  .like{
+      position:absolute;
+      background-color: #42bb32;
+      right: 0;
+      margin-right: 4em;
+      margin-top: 1.7em;
+      padding: 30px 25px 30px 25px;
+      border-radius:50%;
+      text-decoration: none;
+      color: white;
+  }
+  .dislike{
+    position:absolute;
+    background-color: #b31e34;
+    left: 0;
+    margin-left: 4em;
+    margin-top: 1.7em;
+    padding: 30px 15px 30px 15px;
+    border-radius:50%;
+    text-decoration: none;
+    color: white;
+}

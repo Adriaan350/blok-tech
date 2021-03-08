@@ -54,6 +54,8 @@ app.use(passport.session())
 
 app.use('/static', express.static(path.join(__dirname, './static/public')));
 
+// app.use(express.static(__dirname+'/public'));
+
 app.get('/login', (request, response) => {
   response.render('login')
 });
@@ -66,8 +68,8 @@ app.get('/instellingen', magIk, (request, response) => {
   response.render('instellingen')
 });
 
-app.get('/home', magIk, (request, response) => {
-  response.render('home')
+app.get('/voetbal', magIk, (request, response) => {
+  response.render('voetbal')
 });
 
 app.get('/delete', (request, response) => {
