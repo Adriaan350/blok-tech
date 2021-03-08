@@ -7,20 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body class="login">
+    <h1>Inloggen</h1>
     <form method="POST" action="/login">
-        <h1>Register</h1>
-        <label for="username">Wat wil je als gebruikersnaam?</label><br><br>
-        <input type="text" name="username"><br>
-        <label for="password">Wat wil je als wachtwoord?</label><br><br>
-        <input type="password" name="password"><br>
-        <span>Nog geen account? <a href="/register">Registreer!</a></span>
-
-        <button type="submit">Let's go</button><br><br>
-        {{#if messages.error}}
-        <span id="error">{{messages.error}}</span>
-        {{/if}}
+        <label for="username">Wat wil je als gebruikersnaam?</label>
+        <input type="text" name="username" required="required">
+        <label for="password">Wat wil je als wachtwoord?</label>
+        <input type="password" name="password" required="required">
+        <button type="submit">Let's go</button>
+        
+        
     </form>
+    <p class="berichtje">Nog geen account? <a class="linkje" href="/register">Registreer!</a></p>
+    {{#if messages.error}}
+    <p id="error">{{messages.error}}</p>
+    {{/if}}
 </body>
 
 </html>
