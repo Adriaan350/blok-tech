@@ -97,65 +97,64 @@ ul {
     bottom: 0;
     overflow: hidden;
     background-color: black;
-  }
-  .verwijderheader{
-      margin-top: 3em;
-  }
-  li{
-      width: 33.3%;
-  }
-  li a {
+}
+.verwijderheader{
+    margin-top: 3em;
+}
+li{
+    width: 33.3%;
+}
+li a {
     display: block;
     color: white;
     text-align: center;
     padding: 20px 22px;
     text-decoration: none;
     margin:auto;
-  }
-  
-  li a:hover:not(.active) {
+}
+
+li a:hover:not(.active) {
     background-color: black;
-  }
-  
-  .active {
+}
+.active {
     background-color: white;
     color:black;
-  }
-  .berichtje{
-    text-align: center;
-    margin:1em auto;
-  }
-  .linkje{
-      color: #3413f1;
-  }
-  section > a{
-      position: relative;
-  }
-  section > a:first-of-type > img{
-      margin-top: 1.5em;
+}
+.berichtje{
+  text-align: center;
+  margin:1em auto;
+}
+.linkje{
+    color: #3413f1;
+}
+section > a{
+    position: relative;
+}
+section > a:first-of-type > img{
+    margin-top: 1.5em;
 }
 section > a:last-of-type > img{
     margin-bottom: 3.3em;
 }
-  section > a > img{
-      width: 100vw;
-      overflow: hidden;
-  }
-  .voetbal > main > section > img{
-      margin-top: 2em;
-  }
-  .like{
-      position:absolute;
-      background-color: #42bb32;
-      right: 0;
-      margin-right: 4em;
-      margin-top: 1.7em;
-      padding: 30px 25px 30px 25px;
-      border-radius:50%;
-      text-decoration: none;
-      color: white;
-  }
-  .dislike{
+section > a > img{
+    width: 100vw;
+    overflow: hidden;
+}
+.voetbal > main > section > img{
+    margin-top: 2em;
+}
+.like{
+    position:absolute;
+    background-color: #42bb32;
+    right: 0;
+    margin-right: 4em;
+    margin-top: 1.7em;
+    padding: 30px 25px 30px 25px;
+    border-radius:50%;
+    text-decoration: none;
+    color: white;
+}
+.dislike{
     position:absolute;
     background-color: #b31e34;
     left: 0;
