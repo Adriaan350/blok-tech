@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
@@ -20,8 +20,12 @@ initializePassport(
 const flash = require('express-flash');
 const session = require('express-session');
 
-const app = express()
-const port = 3000
+
+// app.listen(port, () => {
+//   console.log(`Example app listening at http://localhost:${port}`)
+// });
+// const app = express()
+// const port = 3000
 
 const magIk = (request, response, next) => {
   if (request.isAuthenticated()) {
@@ -72,7 +76,9 @@ app.get('/delete', (request, response) => {
 });
 
 app.get('/', magIk, (request, response) => {
-  response.render('index')
+  response.render('index', {
+    name: request.user.name
+  });
 });
 
 app.get('/logout', (request, response) => {
@@ -81,9 +87,7 @@ app.get('/logout', (request, response) => {
   response.redirect('login');
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-});
+
 
 app.get('*', (request, response) => {
   response.send('NOPE 404', 404);

@@ -9,7 +9,7 @@ const connectie = async (mongoose) => {
     await mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useFindAndmodify: false,
+      useFindAndModify: false,
       useCreateIndex: true
     });
     console.log('Connectie werkt');

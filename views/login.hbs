@@ -8,20 +8,20 @@
 </head>
 
 <body class="login">
-    <h1>Inloggen</h1>
-    <form method="POST" action="/login">
-        <label for="username">Wat wil je als gebruikersnaam?</label>
-        <input type="text" name="username" required="required">
-        <label for="password">Wat wil je als wachtwoord?</label>
-        <input type="password" name="password" required="required">
-        <button type="submit">Let's go</button>
-        
-        
-    </form>
-    <p class="berichtje">Nog geen account? <a class="linkje" href="/register">Registreer!</a></p>
-    {{#if messages.error}}
-    <p id="error">{{messages.error}}</p>
-    {{/if}}
+    <main>
+        <h1>Inloggen</h1>
+        <form method="POST" action="/login">
+            <label for="username">Wat wil je als gebruikersnaam?</label>
+            <input type="text" name="username" required="required">
+            <label for="password">Wat wil je als wachtwoord?</label>
+            <input type="password" name="password" required="required">
+            <button type="submit">Let's go</button>
+        </form>
+        <p class="berichtje">Nog geen account? <a class="linkje" href="/register">Registreer!</a></p>
+        {{#if messages.error}}
+        <p id="error">{{messages.error}}</p>
+        {{/if}}
+    </main>
 </body>
 
 </html>
