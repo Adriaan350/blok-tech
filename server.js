@@ -2,13 +2,13 @@
 const express = require('express');
 const session = require('express-session');
 const app = express();
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8000
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 });
 // Path
 const path = require('path');
-
+// body parser - voor post requests
 const bodyParser = require('body-parser');
 
 // handlebars viewengine
@@ -25,7 +25,7 @@ DBConnection(mongoose);
 // bcrypt
 const bcrypt = require('bcrypt');
 
-// Passport
+// Passport - initialize is wat er meegenomen moet worden in de sessie
 const passport = require('passport');
 const initializePassport = require('./passport-config')
 initializePassport(
@@ -94,7 +94,6 @@ app.get('/', magIk, (request, response) => {
 
 app.get('/logout', (request, response) => {
   request.logout();
-  request.flash('uitgelogd');
   response.redirect('login');
 });
 
