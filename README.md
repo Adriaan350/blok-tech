@@ -2,14 +2,19 @@
 Deze app is gemaakt om in een soort tinder stijl teamgenoten te vinden voor je sportteam. Dus als de gebruiker inlogt dan kan hij/zij een sport aanklikken waar ze teamgenoten voor zoeken. Vervolgens komen er mensen in beeld als een soort tinder en kan de gebruiker liken/disliken. 
 
 # Installatie
+Run de volgende lines in de terminal
+```git
+sudo apt update
+sudo apt install git
+```
+```git
+npm install
+```
 ```git
 $git clone https://github.com/Adriaan350/blok-tech.git
 ```
 ```git
-$npm install
-```
-```git
-$npm start
+npm run run
 ```
 URL: localhost:8000
 
