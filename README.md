@@ -3,6 +3,16 @@ Deze app is gemaakt om in een soort tinder stijl teamgenoten te vinden voor je s
 
 # Installatie
 ![CodeShowcase](https://github.com/Adriaan350/blok-tech/blob/main/extra/code.png)
+```git
+$git clone https://guthub.com/Adriaan350/blok-tech.git
+```
+```git
+$npm install
+```
+```git
+$npm start
+```
+// URL: localhost:8000
 
 Maak een .env bestand aan en zet daar
 ATLAS_URI=[hier de mongodb uri]
