@@ -9,11 +9,8 @@ ATLAS_URI=[hier de mongodb uri]
 SESSION_SECRET=[Zet neer wat je als key wilt]
 
 # Database
+Dit is mijn database schema hier staan de 
 ```js
-const mongoose = require('mongoose');
-var passportLocalMongoose=require("passport-local-mongoose");
-require('../connect.js')
-
 const UserForm = new mongoose.Schema({
     email: {
         type: String,
@@ -38,13 +35,7 @@ const UserForm = new mongoose.Schema({
         require: true,
     }
 });
-
-UserForm.plugin(passportLocalMongoose);
-
-const Users = mongoose.model('Users', UserForm);
-
-module.exports = Users;
- ```
+```
 
 # Dependencies
 - bcrypt
