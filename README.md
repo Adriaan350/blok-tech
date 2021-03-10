@@ -10,9 +10,9 @@ $npm install
 ```
 ```git
 $npm start
-```
-// URL: localhost:8000
 
+// URL: localhost:8000
+```
 Maak een .env bestand aan en zet daar
 ATLAS_URI=[hier de mongodb uri]
 SESSION_SECRET=[Zet neer wat je als key wilt]
