@@ -1,3 +1,10 @@
+# Inhoudsopgave
+- [Inhoudsopgave](#inhoudsopgave)
+- [TeamMates](#teammates)
+- [Installatie](#installatie)
+- [Database](#database)
+- [Dependencies](#dependencies)
+- [Screenshots](#screenshots)
 # TeamMates
 Deze app is gemaakt om in een soort tinder stijl teamgenoten te vinden voor je sportteam. Dus als de gebruiker inlogt dan kan hij/zij een sport aanklikken waar ze teamgenoten voor zoeken. Vervolgens komen er mensen in beeld als een soort tinder en kan de gebruiker liken/disliken. 
 
