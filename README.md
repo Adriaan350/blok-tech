@@ -9,7 +9,7 @@ ATLAS_URI=[hier de mongodb uri]
 SESSION_SECRET=[Zet neer wat je als key wilt]
 
 # Database
-Dit is mijn database schema hier staan de 
+Dit is mijn database schema hier staan de gegevens die ik in de database zet.
 ```js
 const UserForm = new mongoose.Schema({
     email: {
